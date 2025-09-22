@@ -1,0 +1,38 @@
+:root {
+  --container-max-width: 144rem;
+  --section-width: 114rem;
+  --text-max-width: 55.5rem;
+
+  --hero-title-size: 5rem;
+  --sub-heading-font-size: 3.5rem;
+  --numbers-font-size: 2.5rem;
+  --nav-title-font-size: 1.9rem;
+  --plan-type-font-size: 1.8rem;
+  --basic-font-size: 1.6rem;
+  --location-font-size: 1.4rem;
+  --font-family: "Rubik", sans-serif;
+  --font-weight-basic: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --basic-gray-color: rgba(79, 86, 101, 1);
+  --basic-dark-blue-color: rgba(11, 19, 42, 1);
+  --shadow-dark-blue-color: rgba(13, 16, 37, 0.1);
+  --basic-orange-color: #f53855;
+  --dark-orange-color: #9d071e;
+  --stat-border-color: #982e3e22;
+  --hamburger-menu-color: #250408;
+  --hover-orange-color: rgb(166, 0, 25);
+  --light-orange-color: rgba(255, 236, 236, 1);
+  --basic-white-color: rgba(255, 255, 255, 1);
+  --border-color: rgba(238, 239, 242, 1);
+  --plan-box-border-color: rgba(221, 221, 221, 1);
+  --pricing-bg-color: rgba(248, 248, 248, 0.4);
+  --plan-button-color: rgba(245, 56, 56, 1);
+  --dots-color: rgba(221, 224, 228, 1);
+  --footer-copyrights-color: rgba(175, 181, 192, 1);
+  --footer-bg: rgb(242, 242, 242);
+
+  --transition-timing: 0.3s;
+  --border-box-radius: 1rem;
+}

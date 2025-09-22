@@ -1,0 +1,25 @@
+@use "./mixins";
+
+.hero {
+  @include mixins.grid-style($gap: 2.5rem);
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  margin-block-start: 15rem;
+  transition: var(--transition-timing) ease-in-out;
+
+  &__title {
+    width: 55.5rem;
+    line-height: 7rem;
+    font-size: var(--hero-title-size);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__text {
+    margin-block: 2rem 5rem;
+  }
+
+  &__image {
+    width: 61.1rem;
+    height: 38.2rem;
+  }
+}

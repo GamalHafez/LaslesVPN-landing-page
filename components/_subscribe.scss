@@ -1,0 +1,14 @@
+@use "mixins";
+
+.subscribe {
+  @include mixins.white-section;
+  @include mixins.flex-style;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--basic-white-color);
+
+  &__heading {
+    width: 37.1rem;
+    margin-block-end: 0.8rem;
+  }
+}

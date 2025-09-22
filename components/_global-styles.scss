@@ -1,0 +1,83 @@
+@use "./mixins";
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding: 11rem;
+}
+
+body {
+  line-height: 1.4;
+  font-family: var(--font-family);
+  font-size: var(--basic-font-size);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.container,
+.main {
+  @include mixins.grid-style($gap: 11rem);
+  justify-items: center;
+}
+
+.logo {
+  width: 14.9rem;
+  height: 3.6rem;
+}
+
+.link {
+  color: var(--basic-gray-color);
+  transition: color var(--transition-timing) ease-in-out;
+
+  &:hover {
+    color: var(--basic-orange-color);
+  }
+}
+
+.highlight {
+  font-weight: var(--font-weight-bold);
+}
+
+.text {
+  color: var(--basic-gray-color);
+  line-height: 3rem;
+}
+
+.item {
+  color: var(--basic-gray-color);
+}
+
+.sub-heading {
+  font-size: var(--sub-heading-font-size);
+  font-weight: var(--font-weight-medium);
+  line-height: 5rem;
+}
+
+.cta-button {
+  border-radius: 1rem;
+  color: var(--basic-white-color);
+  line-height: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  background-color: var(--basic-orange-color);
+  width: 25rem;
+  height: 6rem;
+  box-shadow: 0 3.5rem 3rem -1rem var(--shadow-orange-color);
+  transition: var(--transition-timing) ease-in-out;
+
+  &:hover {
+    background-color: var(--hover-orange-color);
+    transform: scale(1.02);
+  }
+}
+
+.text-max-width {
+  max-width: var(--text-max-width);
+}
+
+.widthed-section {
+  width: var(--section-width);
+}

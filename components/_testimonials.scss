@@ -1,0 +1,138 @@
+@use "mixins";
+
+.testimonials {
+  @include mixins.centered-layout;
+  max-width: var(--section-width);
+
+  &__heading {
+    width: 44.7rem;
+    margin-block-end: 1.7rem;
+  }
+
+  &__cards {
+    margin-block: 7rem;
+    @include mixins.flex-style($gap: 4.7rem);
+  }
+
+  &__card {
+    text-align: left;
+    min-width: 40rem;
+    min-height: 23rem;
+    height: auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 0.3rem solid var(--plan-box-border-color);
+
+    &-selected {
+      border-color: var(--basic-orange-color);
+    }
+  }
+
+  &__header {
+    @include mixins.flex-style;
+    justify-content: space-between;
+    align-content: center;
+    margin-block-end: 1.6rem;
+  }
+
+  &__data {
+    @include mixins.flex-style($gap: 2rem);
+    align-items: center;
+  }
+
+  &__image {
+    width: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: var(--plan-type-font-size);
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__location {
+    font-size: var(--location-font-size);
+    color: var(--basic-gray-color);
+  }
+
+  &__rate {
+    @include mixins.flex-style($gap: 1.4rem);
+    align-items: center;
+
+    &::after {
+      content: "";
+      background-image: url(../images/star.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1.3rem;
+      height: 1.2rem;
+    }
+  }
+
+  &__feedback {
+    line-height: 3rem;
+  }
+}
+
+.controls {
+  max-width: var(--section-width);
+
+  justify-self: start;
+  width: 100%;
+  @include mixins.flex-style;
+  align-items: center;
+}
+
+.dots {
+  @include mixins.flex-style($gap: 1.5rem);
+  max-height: 1.5rem;
+
+  &__dot {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--dots-color);
+
+    &--active {
+      width: 4.5rem;
+      border-radius: 10rem;
+      background-color: var(--plan-button-color);
+    }
+  }
+}
+
+.arrows {
+  margin-inline-start: auto;
+  @include mixins.flex-style($gap: 2rem);
+
+  &__arrow {
+    width: 6rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 0.3rem solid var(--plan-button-color);
+
+    @include mixins.flex-style;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 1.75rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &-left::after {
+      background-image: url(../images/left-arrow.png);
+    }
+
+    &-right {
+      background-color: var(--plan-button-color);
+      &::after {
+        background-image: url(../images/right-arrow.png);
+      }
+    }
+  }
+}

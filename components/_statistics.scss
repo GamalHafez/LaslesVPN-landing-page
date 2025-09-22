@@ -1,0 +1,38 @@
+@use "./mixins";
+
+.statistics {
+  @include mixins.white-section;
+  justify-content: space-around;
+
+  &__item {
+    @include mixins.flex-style($gap: 3rem);
+    align-items: center;
+
+    &:nth-of-type(2) {
+      padding-inline: clamp(4rem, 8vw, 12rem);
+      padding-block: 3.5rem;
+      border-left: 0.3rem solid var(--border-color);
+      border-right: 0.3rem solid var(--border-color);
+    }
+  }
+
+  &__icon {
+    @include mixins.flex-style;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-orange-color);
+    border-radius: 50%;
+    width: 5.5rem;
+    aspect-ratio: 1/1;
+  }
+
+  &__number {
+    line-height: 3rem;
+    font-size: var(--numbers-font-size);
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__label {
+    color: var(--basic-gray-color);
+  }
+}

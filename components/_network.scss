@@ -1,0 +1,16 @@
+@use "./mixins";
+
+.network {
+  @include mixins.centered-layout($gap: 2rem);
+
+  &__highlighted {
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__map,
+  &__sponsors {
+    margin-block-start: clamp(4rem, 8vw, 11rem);
+    max-width: 100%;
+    height: auto;
+  }
+}

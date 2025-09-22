@@ -1,0 +1,84 @@
+@use "./mixins";
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  background-color: var(--basic-white-color);
+  @include mixins.grid-style($col: 3);
+  align-items: center;
+  justify-items: center;
+
+  padding-block: 4rem;
+  border-radius: var(--border-box-radius);
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    z-index: -1;
+    width: var(--container-max-width);
+    height: 100%;
+  }
+
+  &__logo {
+    margin-inline-end: auto;
+  }
+
+  &__nav {
+    @include mixins.flex-style($gap: 4rem);
+    justify-content: space-between;
+  }
+
+  &__buttons {
+    @include mixins.flex-style($gap: 4rem);
+    font-weight: var(--font-weight-medium);
+    margin-inline-start: auto;
+
+    &--sign-in {
+      color: var(--basic-dark-blue-color);
+    }
+
+    &--sign-up {
+      color: var(--basic-orange-color);
+      border: 0.1rem solid var(--basic-orange-color);
+      border-radius: 5rem;
+      padding: 1rem 2rem;
+      min-width: 15rem;
+    }
+  }
+}
+
+
+.navigation__title {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+
+  &__label {
+    cursor: pointer;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/menu.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 3.6rem;
+      margin-inline-end: 0.5rem;
+      aspect-ratio: 1/1;
+      transition: var(--transition-timing) ease-in-out;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .hamburger__label::before {
+      background-image: url(../images/logout.png);
+      width: 3rem;
+      margin-inline-end: 1rem;
+    }
+  }
+}

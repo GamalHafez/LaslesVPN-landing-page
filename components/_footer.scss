@@ -1,0 +1,61 @@
+@use "./mixins";
+
+.footer {
+  position: relative;
+  @include mixins.flex-style;
+  justify-content: center;
+  padding-block-end: 8rem;
+
+  &::before {
+    content: "";
+    background-color: var(--footer-bg);
+    position: absolute;
+    bottom: 0;
+    min-width: 144rem;
+    height: 56.3rem;
+    z-index: -1;
+    border-radius: var(--border-box-radius);
+  }
+
+  &__text {
+    width: 34rem;
+    margin-block-start: 1.3rem;
+  }
+
+  &__highlight {
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__socials {
+    @include mixins.flex-style($gap: 1.6rem);
+    margin-block: 2rem 1rem;
+    img {
+      transition: var(--transition-timing) ease-in-out;
+
+      border-radius: 50%;
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  &__copyrights {
+    color: var(--footer-copyrights-color);
+  }
+
+  &__nav {
+    margin-inline-start: auto;
+    @include mixins.flex-style($gap: 10rem);
+  }
+
+  &__category {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--plan-type-font-size);
+    line-height: 3rem;
+    margin-block-end: 3rem;
+  }
+
+  &__links {
+    @include mixins.grid-style($gap: 2rem);
+  }
+}

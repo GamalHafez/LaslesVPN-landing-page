@@ -1,0 +1,23 @@
+@mixin grid-style($col: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  gap: $gap;
+}
+
+@mixin flex-style($gap: 0) {
+  display: flex;
+  gap: $gap;
+}
+
+@mixin white-section {
+  @include flex-style;
+  box-shadow: 0.1rem 1.3rem 3rem var(--shadow-dark-blue-color);
+  border-radius: var(--border-box-radius);
+  padding: 4rem 5rem;
+}
+
+@mixin centered-layout($gap: 0) {
+  @include grid-style($gap);
+  justify-items: center;
+  text-align: center;
+}

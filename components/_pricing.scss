@@ -1,0 +1,103 @@
+@use "./mixins";
+
+.pricing {
+  @include mixins.centered-layout($gap: 2rem);
+  position: relative;
+  padding-block: 5rem 10rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    min-width: 100vw;
+    z-index: -1;
+    height: 100%;
+    background-color: var(--pricing-bg-color);
+  }
+
+  &__text {
+    margin-block-end: 4rem;
+  }
+
+  &__plans {
+    @include mixins.flex-style($gap: 5rem);
+  }
+}
+
+.plan {
+  @include mixins.flex-style($gap: 2rem);
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding-block: 7rem 5rem;
+  width: 33rem;
+  min-height: 76rem;
+
+  border: 0.3rem solid var(--plan-box-border-color);
+  border-radius: var(--border-box-radius);
+  // box-shadow: 0 0.1rem 2rem rgba(0, 0, 0, 0.1);
+
+  &__image {
+    width: 14.5rem;
+    height: 16.5rem;
+    align-self: center;
+  }
+
+  &__type {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--plan-type-font-size);
+    margin-block: 1rem 2rem;
+  }
+
+  &__list {
+    @include mixins.flex-style($gap: 2rem);
+    flex-direction: column;
+  }
+
+  &__item {
+    @include mixins.flex-style($gap: 2rem);
+    justify-content: flex-start;
+    align-items: center;
+
+    &::before {
+      content: "";
+      width: 1.3rem;
+      height: 0.9rem;
+      background-image: url(../images/green-check.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__cta {
+    margin-block-start: auto;
+  }
+
+  &__price {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--numbers-font-size);
+  }
+
+  &__duration {
+    font-weight: var(--font-weight-basic);
+    color: var(--basic-gray-color);
+  }
+
+  &__button {
+    margin-block-start: 1.7rem;
+    width: 17.7rem;
+    height: 4.5rem;
+    border-radius: 5rem;
+    color: var(--plan-button-color);
+    font-weight: var(--font-weight-bold);
+    border: 0.3rem solid var(--plan-button-color);
+  }
+
+  &--featured {
+    border-color: var(--plan-button-color);
+    button {
+      background-color: var(--plan-button-color);
+      color: var(--basic-white-color);
+      box-shadow: 0 3.5rem 3rem -1.3rem var(--shadow-orange-color);
+    }
+  }
+}
